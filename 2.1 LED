@@ -1,0 +1,14 @@
+
+int LED = 2;                 //DEFINIMO UNA VARIABLE PARA ASIGNARLE UN NUMERO DE PIN
+
+
+void setup() {
+  pinMode(LED, OUTPUT);     //DEFINIMOS LED COMO SALIDA "OUT-PUT"
+
+}
+void loop() {
+  digitalWrite(LED, HIGH);  //ENCIENDE LED PIN2   
+  delay(1000);              //TIEMPO DE ESPERA       
+  digitalWrite(LED, LOW);   //APAGA LED PIN2    
+              
+}
