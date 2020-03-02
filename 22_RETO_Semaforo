@@ -1,0 +1,24 @@
+
+int VERDE = 2;
+int AMAR = 4;
+int ROJO = 6;
+
+void setup() {
+  pinMode(VERDE, OUTPUT);
+  pinMode(AMAR, OUTPUT);
+  pinMode(ROJO, OUTPUT);
+}
+void loop() {
+  digitalWrite(VERDE, HIGH);   
+  delay(1000);                     
+  digitalWrite(VERDE, LOW);    
+ //APAGA PASA AL AMARILLO      
+  digitalWrite(AMAR, HIGH);   
+  delay(1000);                     
+  digitalWrite(AMAR, LOW);    
+ //APAGA PASA AL ROJO  
+  digitalWrite(ROJO, HIGH);   
+  delay(1000);                     
+  digitalWrite(ROJO, LOW);    
+ //APAGA PASA AL VERDE               
+}
