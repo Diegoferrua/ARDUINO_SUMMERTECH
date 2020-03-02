@@ -1,0 +1,34 @@
+#define LM35 A0 
+float Temperatura; 
+float ValorSensor;
+int LED1=6;
+int LED2=4;
+int MOTOR=9;
+-----------------------------
+void setup() { 
+Serial.begin(9600); 
+pinMode(LM35,INPUT);
+pinMode(LED1,OUTPUT);
+  pinMode(LED2,OUTPUT); 
+ pinMode(MOTOR,OUTPUT); 
+} 
+-----------------------------
+void loop() { 
+ValorSensor = analogRead(LM35);
+Temperatura = (ValorSensor * 5.0 * 100.0) / 1023.0; 
+Serial.println(Temperatura); 
+delay(50); 
+  if(Temperatura<20){
+    digitalWrite(LED1,HIGH);
+  }
+  else if(Temperatura>21 && Temperatura<30)
+{
+  digitalWrite(LED2,HIGH);
+  }
+  else{
+   digitalWrite(MOTOR,HIGH)
+  digitalWrite(LED1,LOW);
+   digitalWrite(LED2,LOW);  
+   delay(2000);
+}
+} 

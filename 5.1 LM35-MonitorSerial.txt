@@ -1,0 +1,15 @@
+#define LM35 A0 
+float Temperatura; 
+float ValorSensor; 
+
+void setup() { 
+Serial.begin(9600); 
+pinMode(LM35,INPUT);
+pinMode(LED,OUTPUT); 
+} 
+void loop() { 
+ValorSensor = analogRead(LM35);
+Temperatura = (ValorSensor * 5.0 * 100.0) / 1023.0; 
+Serial.println(Temperatura); 
+delay(50); 
+} 

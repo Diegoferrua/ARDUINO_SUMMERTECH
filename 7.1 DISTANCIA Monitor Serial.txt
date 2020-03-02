@@ -1,0 +1,33 @@
+
+/*definimos las herramientas*/
+int trigPin = 7;  //PIN SONIDO 7
+int echoPin = 5;  //PIN ESCUCHA 5
+
+/*definimos las herramientas*/
+int trigPin = 7;  //PIN SONIDO 7
+int echoPin = 5;  //PIN ESCUCHA 5
+/* defines variables*/
+long duration,distance;
+/*Como vamos a usar las herramientas*/
+void setup() {
+pinMode(trigPin, OUTPUT); // trigPin como Output salida
+pinMode(echoPin, INPUT);  //  echoPin as an Input entrada
+Serial.begin(9600);       // inicio de comunicación serial
+}
+/*PROCESO SE REPITE*/
+void loop() {
+  
+digitalWrite(trigPin, LOW);     // Inicia en LOW 0
+delayMicroseconds(2);           //TIEMPO apagado
+/*---------------------------------*/
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+  
+/*----------------------------------*/
+duration = pulseIn(echoPin, HIGH); //detecta el tiempo del pulso
+distance= duration*0.034/2;        //Calculos matematiccos
+/*-----------------------------------*/
+Serial.print("Distance: ");        //Monitor serial
+Serial.println(distance);          //Distancia
+}
